@@ -1,0 +1,72 @@
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.Form1.resources
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.ProductDetails.resources
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Presentation.exe.config
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Presentation.exe
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Presentation.pdb
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Core.exe
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Infraestructure.exe
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Core.pdb
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Core.exe.config
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Infraestructure.pdb
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\bin\Debug\Infraestructure.exe.config
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.csprojAssemblyReference.cache
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.exe
+C:\Users\Sistemas-13\source\repos\SalesApp\Presentation\obj\Debug\Presentation.pdb
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Presentation.exe.config
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Presentation.exe
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Presentation.pdb
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Core.exe
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Infraestructure.exe
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Core.pdb
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Core.exe.config
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Infraestructure.pdb
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\bin\Debug\Infraestructure.exe.config
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.csproj.AssemblyReference.cache
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.Form1.resources
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.ProductDetails.resources
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.exe
+C:\Users\Yasser\Source\Repos\SalesApp\Presentation\obj\Debug\Presentation.pdb
+F:\SalesApp\Presentation\bin\Debug\Presentation.exe.config
+F:\SalesApp\Presentation\bin\Debug\Presentation.exe
+F:\SalesApp\Presentation\bin\Debug\Presentation.pdb
+F:\SalesApp\Presentation\bin\Debug\Core.exe
+F:\SalesApp\Presentation\bin\Debug\Infraestructure.exe
+F:\SalesApp\Presentation\bin\Debug\Core.pdb
+F:\SalesApp\Presentation\bin\Debug\Core.exe.config
+F:\SalesApp\Presentation\bin\Debug\Infraestructure.pdb
+F:\SalesApp\Presentation\bin\Debug\Infraestructure.exe.config
+F:\SalesApp\Presentation\obj\Debug\Presentation.csprojAssemblyReference.cache
+F:\SalesApp\Presentation\obj\Debug\Presentation.Form1.resources
+F:\SalesApp\Presentation\obj\Debug\Presentation.ProductDetails.resources
+F:\SalesApp\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+F:\SalesApp\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+F:\SalesApp\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+F:\SalesApp\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+F:\SalesApp\Presentation\obj\Debug\Presentation.exe
+F:\SalesApp\Presentation\obj\Debug\Presentation.pdb
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Presentation.exe.config
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Presentation.exe
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Presentation.pdb
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Core.exe
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Infraestructure.exe
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Core.pdb
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Core.exe.config
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Infraestructure.pdb
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\bin\Debug\Infraestructure.exe.config
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.csprojAssemblyReference.cache
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.Form1.resources
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.ProductDetails.resources
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.exe
+C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.pdb
