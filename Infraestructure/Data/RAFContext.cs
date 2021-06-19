@@ -212,5 +212,98 @@ namespace Infraestructure.Data
 
             return listT;
         }
+
+        public int Update<T>(T t)
+        {
+            // El primer paso es conseguir el id del generico T que actualizaremos
+            PropertyInfo[] info = t.GetType().GetProperties();
+            int id = -1;
+            
+            foreach(PropertyInfo pinfo in info)
+            {
+                if (pinfo.Name.Equals("Id", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    id = int.Parse(pinfo.GetValue(t).ToString());
+                    //Console.WriteLine(pinfo.Name + ": " + id);
+                }
+            }
+
+            if (id == -1)
+                return -1;
+
+            using ( BinaryWriter bwData = new BinaryWriter(DataStream))
+            {
+                using (BinaryReader brHeader = new BinaryReader(HeaderStream))
+                {
+                    brHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                    int n = brHeader.ReadInt32();
+                    int k = brHeader.ReadInt32();
+
+                    if (id <= 0 || id > k)
+                    {
+                        return -1;
+                    }
+
+                    long posh = 8 + (id - 1) * 4;
+                    brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
+                    int index = brHeader.ReadInt32();
+
+                    long posd = (index - 1) * size;
+                    bwData.BaseStream.Seek(posd, SeekOrigin.Begin);
+
+                    PropertyInfo[] properties = t.GetType().GetProperties();
+                    foreach (PropertyInfo pinfo in properties)
+                    {
+                        Type type = pinfo.PropertyType;
+                        object obj = pinfo.GetValue(t, null);
+
+                        if (type.IsGenericType)
+                        {
+                            continue;
+                        }
+
+                        if (pinfo.Name.Equals("Id", StringComparison.CurrentCultureIgnoreCase))
+                        {
+                            bwData.Write(id);
+                            continue;
+                        }
+
+                        if (type == typeof(int))
+                        {
+                            bwData.Write((int)obj);
+                        }
+                        else if (type == typeof(long))
+                        {
+                            bwData.Write((long)obj);
+                        }
+                        else if (type == typeof(float))
+                        {
+                            bwData.Write((float)obj);
+                        }
+                        else if (type == typeof(double))
+                        {
+                            bwData.Write((double)obj);
+                        }
+                        else if (type == typeof(decimal))
+                        {
+                            bwData.Write((decimal)obj);
+                        }
+                        else if (type == typeof(char))
+                        {
+                            bwData.Write((char)obj);
+                        }
+                        else if (type == typeof(bool))
+                        {
+                            bwData.Write((bool)obj);
+                        }
+                        else if (type == typeof(string))
+                        {
+                            bwData.Write((string)obj);
+                        }
+                    }
+                    return 0;
+                }
+            }
+        }
     }
 }

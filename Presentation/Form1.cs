@@ -49,7 +49,22 @@ namespace Presentation
                 Console.WriteLine("No data");
             }
 
-            products.ForEach(p => Console.WriteLine($"Id: {p.Id} Name: {p.Model}"));
+            Product pro = new Product()
+            {
+                Name = "Avena",
+                Brand = "Quaker",
+                Model = "una libra",
+                Description = "Granulada",
+                Price = 10M,
+                Stock = 100,
+                ImageURL = ""
+            };
+            // actualizara el objeto del indice n + 1 porque las listas y arreglos cuentan desde 0
+            pro.Id = products.ElementAt(6).Id;
+
+            productRepository.Update(pro);
+            products = productRepository.GetAll().ToList();
+            products.ForEach(p => Console.WriteLine($"Id: {p.Id} Name: {p.Name} Brand: {p.Brand} Modelo: {p.Model} Descripcion: {p.Description} Stock number: {p.Stock}\n"));
         }
 
         private void Button2_Click(object sender, EventArgs e)
