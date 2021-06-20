@@ -28,7 +28,6 @@ C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Core\obj\Debug\Core.pdb
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\bin\Debug\Core.exe.config
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\bin\Debug\Core.exe
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\bin\Debug\Core.pdb
-C:\Users\LENOVO\source\repos\TareaCsharp\Core\obj\Debug\Core.csprojAssemblyReference.cache
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\obj\Debug\Core.exe
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\obj\Debug\Core.pdb

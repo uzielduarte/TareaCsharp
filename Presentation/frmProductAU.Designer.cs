@@ -39,7 +39,7 @@ namespace Presentation
             this.label8 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtBrand = new System.Windows.Forms.TextBox();
@@ -130,7 +130,7 @@ namespace Presentation
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Controls.Add(this.btnAdd);
+            this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 406);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -145,15 +145,17 @@ namespace Presentation
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnAdd
+            // btnSave
             // 
-            this.btnAdd.Location = new System.Drawing.Point(210, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 35);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Save";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(210, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(90, 35);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtName
             // 
@@ -260,7 +262,7 @@ namespace Presentation
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtBrand;

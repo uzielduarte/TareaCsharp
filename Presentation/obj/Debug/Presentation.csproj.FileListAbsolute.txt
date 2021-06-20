@@ -81,6 +81,8 @@ C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\bin\Debug\Infraestructure.
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\bin\Debug\Infraestructure.exe.config
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.csprojAssemblyReference.cache
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.Form1.resources
+C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.frmProductAU.resources
+C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.frmProductos.resources
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.ProductDetails.resources
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.Properties.Resources.resources
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
@@ -88,5 +90,3 @@ C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.csp
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.exe
 C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.pdb
-C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.frmProductos.resources
-C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.frmProductAU.resources

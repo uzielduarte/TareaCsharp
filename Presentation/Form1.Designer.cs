@@ -41,7 +41,7 @@
             this.productoToolStripMenuItem,
             this.productosViewToolStripMenuItem});
             this.catalogoProductoToolStripMenuItem.Name = "catalogoProductoToolStripMenuItem";
-            this.catalogoProductoToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.catalogoProductoToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.catalogoProductoToolStripMenuItem.Text = "Catalogo";
             // 
             // productoToolStripMenuItem
@@ -65,7 +65,7 @@
             this.catalogoProductoToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(740, 30);
+            this.menuStrip2.Size = new System.Drawing.Size(740, 28);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 

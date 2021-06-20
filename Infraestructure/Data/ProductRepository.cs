@@ -15,6 +15,7 @@ namespace Infraestructure.Data
         private RAFContext context;
         private readonly int SIZE = 2791;
         
+
         public ProductRepository()
         {
             context = new RAFContext("Product", SIZE);
@@ -32,11 +33,16 @@ namespace Infraestructure.Data
 
         public bool Delete(Product t)
         {
-            return context.Delete<Product>(t);
+            if(context.Get<Product>(t.Id) == null) // Esto creo que no es necesario 
+            {
+                throw new ArgumentException($"Product with Id {t.Id} does not exists.");
+            }
+            return context.Delete(t.Id);
         }
 
         public IEnumerable<Product> GetAll()
-        {
+        { 
+
             return context.GetAll<Product>();
         }
 
