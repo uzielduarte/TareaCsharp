@@ -251,7 +251,7 @@ namespace Infraestructure.Data
 
                     long posh = 8 + (id - 1) * 4;
                     brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
-                    int index = brHeader.ReadInt32();
+                    int index = id;
 
                     long posd = (index - 1) * size;
                     bwData.BaseStream.Seek(posd, SeekOrigin.Begin);
@@ -326,7 +326,9 @@ namespace Infraestructure.Data
             }
 
             if (id == -1)
+            {
                 return false;
+            }
             
             using (BinaryWriter tempBWHeader = new BinaryWriter(File.Open($"temp.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
             {
@@ -345,7 +347,7 @@ namespace Infraestructure.Data
                 }
                 if(n == 1)
                 {
-                    File.Delete(fileName);
+                    File.Delete(fileName+".hd");
                     return false;
                 }
                 //HeaderStream.Close();

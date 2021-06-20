@@ -15,6 +15,7 @@ namespace Infraestructure.Data
         private RAFContext context;
         private readonly int SIZE = 2791;
         
+
         public ProductRepository()
         {
             context = new RAFContext("Product", SIZE);
