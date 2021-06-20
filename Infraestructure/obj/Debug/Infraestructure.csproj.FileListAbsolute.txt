@@ -42,3 +42,14 @@ C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Infraestructure\obj\Debug\
 C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
 C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.exe
 C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.pdb
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\bin\Debug\Infraestructure.exe.config
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\bin\Debug\Infraestructure.exe
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\bin\Debug\Infraestructure.pdb
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\bin\Debug\Core.exe
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\bin\Debug\Core.pdb
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\bin\Debug\Core.exe.config
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.csprojAssemblyReference.cache
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.exe
+C:\Users\LENOVO\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.pdb
