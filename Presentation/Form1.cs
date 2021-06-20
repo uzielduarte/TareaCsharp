@@ -62,8 +62,8 @@ namespace Presentation
             // actualizara el objeto del indice n + 1 porque las listas y arreglos cuentan desde 0
             pro.Id = products.ElementAt(0).Id;
 
-            productRepository.Update(pro);
-            productRepository.Delete(products.ElementAt(products.Count -1));
+            //productRepository.Update(pro);
+            //productRepository.Delete(products.ElementAt(products.Count - 1));
             products = productRepository.GetAll().ToList();
             products.ForEach(p => Console.WriteLine($"Id: {p.Id} Name: {p.Name}\n"));
             Console.WriteLine(products.Count);

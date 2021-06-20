@@ -49,8 +49,9 @@ namespace Infraestructure.Data
                         brHeader.BaseStream.Seek(0, SeekOrigin.Begin);
                         n = brHeader.ReadInt32();
                         k = brHeader.ReadInt32();
+                        
                     }
-
+                    
                     long pos = k * size;
                     bwData.BaseStream.Seek(pos, SeekOrigin.Begin);
 
@@ -359,7 +360,13 @@ namespace Infraestructure.Data
                         brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
                         index = brHeader.ReadInt32();
 
-                        if (index == id)
+                        if(index == id && (i == n - 1))
+                        {
+                            tempBWHeader.BaseStream.Seek(4, SeekOrigin.Begin);
+                            tempBWHeader.Write(k);
+                            continue;
+                        }
+                        if (index == id )
                             continue;
                         //tempK++;
                         long posH = 8 + tempIterator * 4;
@@ -368,8 +375,8 @@ namespace Infraestructure.Data
 
                         tempBWHeader.BaseStream.Seek(0, SeekOrigin.Begin);
                         tempBWHeader.Write(++tempN);
+                        
                         tempBWHeader.Write(index);
-                        //Console.WriteLine(i + " => " + tempIterator + " => " + index);
                         tempIterator++;
                     }
                 }
@@ -401,44 +408,18 @@ namespace Infraestructure.Data
 
                         bwHeader.BaseStream.Seek(0, SeekOrigin.Begin);
                         bwHeader.Write(++tempN);
+                        if (i == n - 1)
+                        {
+                            bwHeader.BaseStream.Seek(4, SeekOrigin.Begin);
+                            bwHeader.Write(k);
+                        }
+                        else
                         bwHeader.Write(index);
-                        //Console.WriteLine(posH + " => " + index + " " + tempN);
                     }
                 }
                     
             }
 
-            List<Product> listT = new List<Product>();
-            int nn, kk;
-            using (BinaryReader brHeader = new BinaryReader(File.Open($"temp.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
-            {
-                if (brHeader.BaseStream.Length == 0)
-                    return false;
-                brHeader.BaseStream.Seek(0, SeekOrigin.Begin);
-                nn = brHeader.ReadInt32();
-                kk = brHeader.ReadInt32();
-                
-            }
-
-            for (int i = 0; i < nn; i++)
-            {
-                int index;
-                using (BinaryReader brHeader = new BinaryReader(File.Open($"temp.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
-                {
-                    long posh = 8 + i * 4;
-                    brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
-                    index = brHeader.ReadInt32();
-                    //Console.WriteLine(index);
-                }
-
-                Product p = Get<Product>(index);
-                listT.Add(p);
-            }
-            /*foreach (Product pr in listT)
-            {
-                Console.WriteLine($"Id: {pr.Id} Name: {pr.Name}\n");
-            }*/
-            
             if (File.Exists("temp.hd"))
                 File.Delete("temp.hd");
             return true;
