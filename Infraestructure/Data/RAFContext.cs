@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Poco;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -133,8 +134,8 @@ namespace Infraestructure.Data
                 PropertyInfo[] properties = newValue.GetType().GetProperties();
                 long posh = 8 + (id - 1) * 4;
                 brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
-                int index = brHeader.ReadInt32();
-
+                int index = id; //brHeader.ReadInt32();
+                //Console.WriteLine(posh + " " + index);
                 long posd = (index - 1) * size;
                 brData.BaseStream.Seek(posd, SeekOrigin.Begin);
                 foreach (PropertyInfo pinfo in properties)
@@ -191,6 +192,8 @@ namespace Infraestructure.Data
             int n, k;
             using (BinaryReader brHeader = new BinaryReader(HeaderStream))
             {
+                if (brHeader.BaseStream.Length == 0)
+                    return null;
                 brHeader.BaseStream.Seek(0, SeekOrigin.Begin);
                 n = brHeader.ReadInt32();
                 k = brHeader.ReadInt32();
@@ -205,8 +208,9 @@ namespace Infraestructure.Data
                     brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
                     index = brHeader.ReadInt32();
                 }
-
+                
                 T t = Get<T>(index);
+                
                 listT.Add(t);
             }
 
@@ -304,6 +308,140 @@ namespace Infraestructure.Data
                     return 0;
                 }
             }
+        }
+
+        public bool Delete<T>(T t)
+        {
+            PropertyInfo[] info = t.GetType().GetProperties();
+            int id = -1;
+
+            foreach (PropertyInfo pinfo in info)
+            {
+                if (pinfo.Name.Equals("Id", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    id = int.Parse(pinfo.GetValue(t).ToString());
+                    break;
+                }
+            }
+
+            if (id == -1)
+                return false;
+            
+            using (BinaryWriter tempBWHeader = new BinaryWriter(File.Open($"temp.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
+            {
+                int n;
+                int k;
+                int tempN = 0;
+                //int tempK = 0;
+                using (BinaryReader brHeader = new BinaryReader(HeaderStream))
+                {
+                    if (brHeader.BaseStream.Length == 0)
+                        return false;
+
+                    brHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                    n = brHeader.ReadInt32();
+                    k = brHeader.ReadInt32();
+                }
+                if(n == 1)
+                {
+                    File.Delete(fileName);
+                    return false;
+                }
+                //HeaderStream.Close();
+                int tempIterator = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    int index;
+                    
+                    using (BinaryReader brHeader = new BinaryReader(HeaderStream))
+                    {
+                        long posh = 8 + i * 4;
+                        brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
+                        index = brHeader.ReadInt32();
+
+                        if (index == id)
+                            continue;
+                        //tempK++;
+                        long posH = 8 + tempIterator * 4;
+                        tempBWHeader.BaseStream.Seek(posH, SeekOrigin.Begin);
+                        tempBWHeader.Write(index);
+
+                        tempBWHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                        tempBWHeader.Write(++tempN);
+                        tempBWHeader.Write(index);
+                        //Console.WriteLine(i + " => " + tempIterator + " => " + index);
+                        tempIterator++;
+                    }
+                }
+                File.Delete(fileName);
+
+            }
+
+            using (BinaryWriter bwHeader = new BinaryWriter(HeaderStream))
+            {
+                int n;
+                int k;
+                int tempN = 0;
+                
+                using (BinaryReader tempBRHeader = new BinaryReader(File.Open($"temp.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
+                {
+                    tempBRHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                    n = tempBRHeader.ReadInt32();
+                    k = tempBRHeader.ReadInt32();
+                    for (int i = 0; i < n; i++)
+                    {
+                        int index;
+                        long posh = 8 + i * 4;
+                        tempBRHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
+                        index = tempBRHeader.ReadInt32();
+
+                        long posH = 8 + i * 4;
+                        bwHeader.BaseStream.Seek(posH, SeekOrigin.Begin);
+                        bwHeader.Write(index);
+
+                        bwHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                        bwHeader.Write(++tempN);
+                        bwHeader.Write(index);
+                        //Console.WriteLine(posH + " => " + index + " " + tempN);
+                    }
+                }
+                    
+            }
+
+            List<Product> listT = new List<Product>();
+            int nn, kk;
+            using (BinaryReader brHeader = new BinaryReader(File.Open($"temp.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
+            {
+                if (brHeader.BaseStream.Length == 0)
+                    return false;
+                brHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                nn = brHeader.ReadInt32();
+                kk = brHeader.ReadInt32();
+                
+            }
+
+            for (int i = 0; i < nn; i++)
+            {
+                int index;
+                using (BinaryReader brHeader = new BinaryReader(File.Open($"temp.hd", FileMode.OpenOrCreate, FileAccess.ReadWrite)))
+                {
+                    long posh = 8 + i * 4;
+                    brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
+                    index = brHeader.ReadInt32();
+                    //Console.WriteLine(index);
+                }
+
+                Product p = Get<Product>(index);
+                listT.Add(p);
+            }
+            /*foreach (Product pr in listT)
+            {
+                Console.WriteLine($"Id: {pr.Id} Name: {pr.Name}\n");
+            }*/
+            
+            if (File.Exists("temp.hd"))
+                File.Delete("temp.hd");
+            return true;
         }
     }
 }

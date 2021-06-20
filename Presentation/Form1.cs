@@ -60,11 +60,13 @@ namespace Presentation
                 ImageURL = ""
             };
             // actualizara el objeto del indice n + 1 porque las listas y arreglos cuentan desde 0
-            pro.Id = products.ElementAt(6).Id;
+            pro.Id = products.ElementAt(0).Id;
 
             productRepository.Update(pro);
+            productRepository.Delete(products.ElementAt(products.Count -1));
             products = productRepository.GetAll().ToList();
-            products.ForEach(p => Console.WriteLine($"Id: {p.Id} Name: {p.Name} Brand: {p.Brand} Modelo: {p.Model} Descripcion: {p.Description} Stock number: {p.Stock}\n"));
+            products.ForEach(p => Console.WriteLine($"Id: {p.Id} Name: {p.Name}\n"));
+            Console.WriteLine(products.Count);
         }
 
         private void Button2_Click(object sender, EventArgs e)
