@@ -27,12 +27,12 @@ namespace Infraestructure.Data
 
         public int Update(Product t)
         {
-            throw new NotImplementedException();
+            return context.Update<Product>(t);
         }
 
         public bool Delete(Product t)
         {
-            throw new NotImplementedException();
+            return context.Delete<Product>(t);
         }
 
         public IEnumerable<Product> GetAll()
