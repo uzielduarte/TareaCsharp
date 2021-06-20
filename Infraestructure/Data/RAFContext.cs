@@ -147,6 +147,32 @@ namespace Infraestructure.Data
 
         #endregion
 
+        #region BinarySearchRecursive Implementation (Alternative to use)
+
+        private static int BinarySearchRecursive(int[] array, int left, int right, int item)
+        {
+            if (right >= left)
+            {
+                int middle = left + (right - left) / 2;
+
+                if (array[middle] == item)
+                {
+                    return middle;
+                }
+
+                if (array[middle] > item)
+                {
+                    return BinarySearchRecursive(array, left, middle - 1, item);
+                }
+
+                return BinarySearchRecursive(array, middle + 1, right, item);
+            }
+
+            return -1;
+        }
+
+        #endregion
+
         public T Get<T>(int id)
         {
             T newValue = (T)Activator.CreateInstance(typeof(T));
