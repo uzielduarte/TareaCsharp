@@ -14,11 +14,14 @@ namespace Infraestructure.Data
     {
         private string fileName;
         private int size;
-
+        private List<Product> Products = new List<Product>();
+        int[] ids { get; set; }
+       
         public RAFContext(string fileName, int size)
         {
             this.fileName = fileName;
             this.size = size;
+            Products = GetAll<Product>();
         }
 
         public Stream HeaderStream
@@ -119,6 +122,7 @@ namespace Infraestructure.Data
 
         public T Get<T>(int id)
         {
+           
             T newValue = (T)Activator.CreateInstance(typeof(T));
             using (BinaryReader brHeader = new BinaryReader(HeaderStream),
                                 brData = new BinaryReader(DataStream))
@@ -134,9 +138,11 @@ namespace Infraestructure.Data
 
                 PropertyInfo[] properties = newValue.GetType().GetProperties();
                 long posh = 8 + (id - 1) * 4;
+                //TODO Add Binary search to find the id
                 brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
-                int index = id; //brHeader.ReadInt32();
-                //Console.WriteLine(posh + " " + index);
+                int index = id;  // Can be index = id
+
+                //TO-DO VALIDATE INDEX
                 long posd = (index - 1) * size;
                 brData.BaseStream.Seek(posd, SeekOrigin.Begin);
                 foreach (PropertyInfo pinfo in properties)
@@ -184,7 +190,6 @@ namespace Infraestructure.Data
 
                 return newValue;
             }
-
         }
 
         public List<T> GetAll<T>()
@@ -328,7 +333,7 @@ namespace Infraestructure.Data
                     {
                         bwTemp.BaseStream.Seek(0, SeekOrigin.Begin);
 
-                        bwTemp.Write(n-1);
+                        bwTemp.Write(n - 1);
                         bwTemp.Write(k);
 
                         for (int i = 0, j = 0; i < n; i++)
@@ -339,15 +344,13 @@ namespace Infraestructure.Data
                             int key = brHeader.ReadInt32();
                             if (id == key)
                             {
-                                Console.WriteLine(n);
                                 continue;
-                                
                             }
                             bwTemp.BaseStream.Seek(post, SeekOrigin.Begin);
                             bwTemp.Write(key);
                             j++;
                         }
-                     
+
                     }
                 }
             }
@@ -355,5 +358,6 @@ namespace Infraestructure.Data
             File.Move("temp.hd", $"{fileName}.hd");
             return true;
         }
+
     }
 }

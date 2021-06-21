@@ -16,12 +16,22 @@ namespace Presentation
     public partial class frmProductos : Form
     {
         private ProductRepository productRepository;
-        public frmProductos()   
+        /*Product p = new Product // Con Fines didacticos
+        {
+            Id = 100,
+            Name = "Rodian",
+            Brand = "",
+            Description = " ",
+            ImageURL = "",
+
+        };*/
+        public frmProductos()
         {
             InitializeComponent();
             txtSearch.AutoSize = false;
             this.MinimumSize = new Size(651, 298);
             productRepository = new ProductRepository();
+            //productRepository.Delete(p); Con fine didacticos
             setDataSource();
         }
 
@@ -69,7 +79,6 @@ namespace Presentation
             }
 
             Product p = (Product)dgvProducts.CurrentRow.DataBoundItem;
-            Console.WriteLine(p.Id);
             productRepository.Delete(p);
             setDataSource();
             dgvProducts.Refresh();

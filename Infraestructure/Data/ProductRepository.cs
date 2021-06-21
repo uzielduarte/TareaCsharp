@@ -14,7 +14,7 @@ namespace Infraestructure.Data
     {
         private RAFContext context;
         private readonly int SIZE = 2791;
-        
+        List<Product> products;
 
         public ProductRepository()
         {
@@ -33,6 +33,8 @@ namespace Infraestructure.Data
 
         public bool Delete(Product t)
         {
+            FindId(getIds(),t.Id);
+
             if(context.Get<Product>(t.Id) == null) // Esto creo que no es necesario 
             {
                 throw new ArgumentException($"Product with Id {t.Id} does not exists.");
@@ -47,11 +49,41 @@ namespace Infraestructure.Data
             return context.GetAll<Product>();
         }
 
+
         public IEnumerable<Product> Find(Expression<Func<Product, bool>> where)
         {
             throw new NotImplementedException();
         }
         #endregion
+
+        private int[] getIds()
+        {
+            products = context.GetAll<Product>();
+            int index = products.Count();
+            int[] productsId = new int[index];
+
+            for (int i = 0; i < index; i++)
+            {
+               productsId[i] = products.ElementAt(i).Id;
+            }
+            return productsId;      
+        }
+        private void FindId(Array myArr, object myObject)
+        {
+            if (myArr == null)
+            {
+                return;
+            }
+            int myIndex = Array.BinarySearch(myArr, myObject);
+            if (myIndex < 0)
+            {
+                Console.WriteLine($"The id ({myObject}) is not found.");
+            }
+            else
+            {
+                Console.WriteLine($"The Id is ({myObject}) Found at index {myIndex}.");
+            }
+        }
 
 
         #region Public void create Product
