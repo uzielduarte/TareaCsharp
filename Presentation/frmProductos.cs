@@ -22,6 +22,7 @@ namespace Presentation
             txtSearch.AutoSize = false;
             this.MinimumSize = new Size(651, 298);
             productRepository = new ProductRepository();
+            setDataSource();
         }
 
    

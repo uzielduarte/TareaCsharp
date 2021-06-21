@@ -208,6 +208,7 @@ namespace Infraestructure.Data
                     long posh = 8 + i * 4;
                     brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
                     index = brHeader.ReadInt32();
+                    
                 }
 
                 T t = Get<T>(index);
@@ -253,9 +254,8 @@ namespace Infraestructure.Data
 
                     long posh = 8 + (id - 1) * 4;
                     brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
-                    int index = id;
 
-
+                    int index = id;             
                     long posd = (index - 1) * size;
                     bwData.BaseStream.Seek(posd, SeekOrigin.Begin);
 
@@ -316,6 +316,7 @@ namespace Infraestructure.Data
 
         public bool Delete(int id)
         {
+
             using (FileStream temp = File.Open("temp.hd", FileMode.Create, FileAccess.ReadWrite))
             {
                 using (BinaryReader brHeader = new BinaryReader(HeaderStream))
@@ -326,7 +327,8 @@ namespace Infraestructure.Data
                     using (BinaryWriter bwTemp = new BinaryWriter(temp))
                     {
                         bwTemp.BaseStream.Seek(0, SeekOrigin.Begin);
-                        bwTemp.Write(n);
+
+                        bwTemp.Write(n-1);
                         bwTemp.Write(k);
 
                         for (int i = 0, j = 0; i < n; i++)

@@ -38,6 +38,7 @@ namespace Infraestructure.Data
                 throw new ArgumentException($"Product with Id {t.Id} does not exists.");
             }
             return context.Delete(t.Id);
+
         }
 
         public IEnumerable<Product> GetAll()
