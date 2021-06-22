@@ -70,3 +70,21 @@ C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Pre
 C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.exe
 C:\Users\LENOVO\Documents\Uziel\Git repos\TareaCsharp\Presentation\obj\Debug\Presentation.pdb
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Presentation.exe.config
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Presentation.exe
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Presentation.pdb
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Core.exe
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Infraestructure.exe
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Core.pdb
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Core.exe.config
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Infraestructure.pdb
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\bin\Debug\Infraestructure.exe.config
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.Form1.resources
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.ProductDetails.resources
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.exe
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Presentation\obj\Debug\Presentation.pdb
