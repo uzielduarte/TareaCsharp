@@ -327,6 +327,7 @@ namespace Infraestructure.Data
 
             if (id == -1)
             {
+
                 return false;
             }
             
@@ -345,11 +346,7 @@ namespace Infraestructure.Data
                     n = brHeader.ReadInt32();
                     k = brHeader.ReadInt32();
                 }
-                if(n == 1)
-                {
-                    File.Delete(fileName+".hd");
-                    return false;
-                }
+                
                 //HeaderStream.Close();
                 int tempIterator = 0;
                 for (int i = 0; i < n; i++)
@@ -358,29 +355,41 @@ namespace Infraestructure.Data
                     
                     using (BinaryReader brHeader = new BinaryReader(HeaderStream))
                     {
-                        long posh = 8 + i * 4;
-                        brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
-                        index = brHeader.ReadInt32();
 
-                        if(index == id && (i == n - 1))
+                        if (n == 1)
                         {
-                            tempBWHeader.BaseStream.Seek(4, SeekOrigin.Begin);
+                            tempBWHeader.BaseStream.Seek(0,SeekOrigin.Begin);
+                            tempBWHeader.Write(0);
                             tempBWHeader.Write(k);
-                            continue;
                         }
-                        if (index == id )
-                            continue;
-                        //tempK++;
-                        long posH = 8 + tempIterator * 4;
-                        tempBWHeader.BaseStream.Seek(posH, SeekOrigin.Begin);
-                        tempBWHeader.Write(index);
 
-                        tempBWHeader.BaseStream.Seek(0, SeekOrigin.Begin);
-                        tempBWHeader.Write(++tempN);
-                        
-                        tempBWHeader.Write(index);
-                        tempIterator++;
+                        else
+                        {
+                            long posh = 8 + i * 4;
+                            brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
+                            index = brHeader.ReadInt32();
+
+                            if (index == id && (i == n - 1))
+                            {
+                                tempBWHeader.BaseStream.Seek(4, SeekOrigin.Begin);
+                                tempBWHeader.Write(k);
+                                continue;
+                            }
+                            if (index == id)
+                                continue;
+                            //tempK++;
+                            long posH = 8 + tempIterator * 4;
+                            tempBWHeader.BaseStream.Seek(posH, SeekOrigin.Begin);
+                            tempBWHeader.Write(index);
+
+                            tempBWHeader.BaseStream.Seek(0, SeekOrigin.Begin);
+                            tempBWHeader.Write(++tempN);
+
+                            tempBWHeader.Write(index);
+                            tempIterator++;
+                        }
                     }
+                          
                 }
                 File.Delete(fileName);
 
@@ -397,6 +406,14 @@ namespace Infraestructure.Data
                     tempBRHeader.BaseStream.Seek(0, SeekOrigin.Begin);
                     n = tempBRHeader.ReadInt32();
                     k = tempBRHeader.ReadInt32();
+
+                    if(n == 0)
+                    {
+                        bwHeader.BaseStream.Seek(0,SeekOrigin.Begin);
+                        bwHeader.Write(0);
+                        bwHeader.Write(k);
+                    }
+
                     for (int i = 0; i < n; i++)
                     {
                         int index;
