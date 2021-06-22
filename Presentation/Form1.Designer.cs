@@ -41,21 +41,22 @@
             this.productoToolStripMenuItem,
             this.productosViewToolStripMenuItem});
             this.catalogoProductoToolStripMenuItem.Name = "catalogoProductoToolStripMenuItem";
-            this.catalogoProductoToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.catalogoProductoToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.catalogoProductoToolStripMenuItem.Text = "Catalogo";
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.productoToolStripMenuItem.Text = "Productos";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // productosViewToolStripMenuItem
             // 
             this.productosViewToolStripMenuItem.Name = "productosViewToolStripMenuItem";
-            this.productosViewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.productosViewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productosViewToolStripMenuItem.Text = "Clientes";
+            this.productosViewToolStripMenuItem.Click += new System.EventHandler(this.productosViewToolStripMenuItem_Click);
             // 
             // menuStrip2
             // 
@@ -65,19 +66,19 @@
             this.catalogoProductoToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(740, 30);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(998, 24);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(740, 640);
+            this.ClientSize = new System.Drawing.Size(998, 520);
             this.Controls.Add(this.menuStrip2);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

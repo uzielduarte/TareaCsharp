@@ -32,3 +32,10 @@ C:\Users\LENOVO\source\repos\TareaCsharp\Core\obj\Debug\Core.csprojAssemblyRefer
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\obj\Debug\Core.exe
 C:\Users\LENOVO\source\repos\TareaCsharp\Core\obj\Debug\Core.pdb
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\bin\Debug\Core.exe.config
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\bin\Debug\Core.exe
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\bin\Debug\Core.pdb
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\obj\Debug\Core.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\obj\Debug\Core.exe
+C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\obj\Debug\Core.pdb

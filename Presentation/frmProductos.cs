@@ -81,7 +81,7 @@ namespace Presentation
             {
                 dgvProducts.DataSource = productRepository.GetAll();
             }
-            catch (EndOfStreamException i)
+            catch (EndOfStreamException)
             {
 
             }

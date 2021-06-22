@@ -31,5 +31,12 @@ namespace Presentation
             frmProductos.MdiParent = this;
             frmProductos.Show();
         }
+
+        private void productosViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClients frmClients = new frmClients();
+            frmClients.MdiParent = this;
+            frmClients.Show();
+        }
     }
 }

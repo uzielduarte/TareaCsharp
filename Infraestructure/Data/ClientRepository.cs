@@ -13,11 +13,13 @@ namespace Infraestructure.Data
     {
         private RAFContext context;
         private readonly int SIZE = 228;
+        List<Cliente> clients;
 
         public ClientRepository()
         {
-
+            context = new RAFContext("Client", SIZE);
         }
+
         #region Metodos
         public void Create(Cliente t)
         {
@@ -26,12 +28,17 @@ namespace Infraestructure.Data
 
         public int Update(Cliente t)
         {
-            throw new NotImplementedException();
+            return context.Update<Cliente>(t);
         }
 
         public bool Delete(Cliente t)
         {
-            throw new NotImplementedException();
+            FindId(getId(), t.Id);
+            if (context.Get<Cliente>(t.Id) == null)
+            {
+                throw new ArgumentException($"Product with Id {t.Id} does not exists.");
+            }
+            return context.Delete(t);
         }
 
         public IEnumerable<Cliente> GetAll()
@@ -44,5 +51,35 @@ namespace Infraestructure.Data
             throw new NotImplementedException();
         }
         #endregion
+
+        private int[] getId()
+        {
+            clients = context.GetAll<Cliente>();
+            int indexx = clients.Count();
+            int[] clientsId = new int[indexx];
+
+            for (int i = 0; i < indexx; i++)
+            {
+                clientsId[i] = clients.ElementAt(i).Id;
+            }
+            return clientsId;
+        }
+
+        private void FindId(Array arreglo, Object objeto)
+        {
+            if (arreglo == null)
+            {
+                return;
+            }
+            int index = Array.BinarySearch(arreglo, objeto);
+            if (index < 0)
+            {
+                Console.WriteLine($"The id ({objeto}) is not found ma bro :(");
+            }
+            else
+            {
+                Console.WriteLine($"The id is ({objeto}) Found at the index ({index}).");
+            }
+        }
     }
 }
