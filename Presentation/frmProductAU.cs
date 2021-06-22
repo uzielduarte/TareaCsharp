@@ -153,7 +153,7 @@ namespace Presentation
 
         private void txtModel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validateTextFileds(e, 0);
+            validateTextFileds(e, 2);
         }
 
         private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)

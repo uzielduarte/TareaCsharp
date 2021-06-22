@@ -22,7 +22,7 @@ namespace Presentation
             txtSearch.AutoSize = false;
             this.MinimumSize = new Size(651, 298);
             productRepository = new ProductRepository();
-            setDataSource();
+            dgvProducts.DataSource = productRepository.GetAll();
         }
 
    
@@ -36,7 +36,7 @@ namespace Presentation
             frmProductAU frmProductAU = new frmProductAU();
             frmProductAU.ShowDialog();
             frmProductAU.update = false;
-            setDataSource();
+            dgvProducts.DataSource = productRepository.GetAll();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace Presentation
             frmProductAU.update = true;
             frmProductAU.productToUpdate = p;
             frmProductAU.ShowDialog();
-            setDataSource();
+            dgvProducts.Refresh();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -71,20 +71,36 @@ namespace Presentation
             Product p = (Product)dgvProducts.CurrentRow.DataBoundItem;
             Console.WriteLine(p.Id);
             productRepository.Delete(p);
-
-            setDataSource();
+            dgvProducts.DataSource = productRepository.GetAll();
         }
 
-        private void setDataSource()
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            try
+
+            if (dgvProducts.Rows.Count == 0)
+            {
+                return;
+
+            }
+
+            List<Product> filtro = new List<Product>();
+            string Clave = txtSearch.Text.ToUpper();
+            foreach (Product pro in productRepository.GetAll())
+            {
+                if ((pro.Id + "").ToUpper().Contains(Clave) || pro.Name.ToUpper().Contains(Clave) || (pro.Description + "").ToUpper().Contains(Clave)
+                    || pro.Brand.ToUpper().Contains(Clave) || pro.Model.ToUpper().Contains(Clave) || (pro.Price + "").ToUpper().Contains(Clave)
+                    || (pro.Stock + "").ToUpper().Contains(Clave) || pro.ImageURL.ToUpper().Contains(Clave))
+                    filtro.Add(pro);
+
+            }
+
+            if (filtro.Count > 0)
+                dgvProducts.DataSource = filtro;
+            else
             {
                 dgvProducts.DataSource = productRepository.GetAll();
             }
-            catch (EndOfStreamException)
-            {
-
-            }
+               
         }
     }
 }

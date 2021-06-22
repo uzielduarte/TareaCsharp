@@ -134,3 +134,5 @@ D:\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.CoreCompi
 D:\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 D:\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.exe
 D:\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.pdb
+C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.frmClientAU.resources
+C:\Users\LENOVO\source\repos\TareaCsharp\Presentation\obj\Debug\Presentation.frmClients.resources

@@ -22,8 +22,7 @@ namespace Presentation
             txtSearch.AutoSize = false;
             this.MinimumSize = new Size(651, 298);
             clientRepository = new ClientRepository();
-
-            setDataResource();
+            dgvClients.DataSource = clientRepository.GetAll();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -31,8 +30,7 @@ namespace Presentation
             frmClientAU frmClientAU = new frmClientAU();
             frmClientAU.ShowDialog();
             frmClientAU.update = false;
-
-            setDataResource();
+            dgvClients.DataSource = clientRepository.GetAll();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -52,8 +50,8 @@ namespace Presentation
             frmClientAU.update = true;
             frmClientAU.clientToUpdate = c;
             frmClientAU.ShowDialog();
+            dgvClients.Refresh();
 
-            setDataResource();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -66,17 +64,36 @@ namespace Presentation
             Cliente c = (Cliente)dgvClients.CurrentRow.DataBoundItem;
             Console.WriteLine(c.Id);
             clientRepository.Delete(c);
+            dgvClients.DataSource = clientRepository.GetAll();
 
-            setDataResource();
         }
 
-        private void setDataResource()
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            try
+            if (dgvClients.Rows.Count == 0)
+            {
+                return;
+
+            }
+
+            List<Cliente> filtro = new List<Cliente>();
+            string Clave = txtSearch.Text.ToUpper();
+            foreach (Cliente cli in clientRepository.GetAll())
+            {
+                if ((cli.Id + "").ToUpper().Contains(Clave) || cli.Name.ToUpper().Contains(Clave) ||
+                    (cli.LastName + "").ToUpper().Contains(Clave)||
+                    cli.Email.ToUpper().Contains(Clave) || cli.Phone.ToUpper().Contains(Clave)) 
+                    filtro.Add(cli);
+            }
+
+            if (filtro.Count > 0)
+                dgvClients.DataSource = filtro;
+            else
             {
                 dgvClients.DataSource = clientRepository.GetAll();
             }
-            catch (EndOfStreamException) { throw; }
+
         }
     }
-}
+    }
+
