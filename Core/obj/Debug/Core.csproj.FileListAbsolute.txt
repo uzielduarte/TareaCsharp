@@ -39,3 +39,10 @@ C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\obj\Debug\Core.csproj
 C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\obj\Debug\Core.exe
 C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Core\obj\Debug\Core.pdb
+D:\source\repos\TareaCsharp\Core\bin\Debug\Core.exe.config
+D:\source\repos\TareaCsharp\Core\bin\Debug\Core.exe
+D:\source\repos\TareaCsharp\Core\bin\Debug\Core.pdb
+D:\source\repos\TareaCsharp\Core\obj\Debug\Core.csprojAssemblyReference.cache
+D:\source\repos\TareaCsharp\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+D:\source\repos\TareaCsharp\Core\obj\Debug\Core.exe
+D:\source\repos\TareaCsharp\Core\obj\Debug\Core.pdb

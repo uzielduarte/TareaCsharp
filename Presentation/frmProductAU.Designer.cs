@@ -163,6 +163,7 @@ namespace Presentation
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(288, 22);
             this.txtName.TabIndex = 9;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // txtDescription
             // 
@@ -177,6 +178,7 @@ namespace Presentation
             this.txtBrand.Name = "txtBrand";
             this.txtBrand.Size = new System.Drawing.Size(288, 22);
             this.txtBrand.TabIndex = 11;
+            this.txtBrand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBrand_KeyPress);
             // 
             // txtModel
             // 
@@ -184,6 +186,7 @@ namespace Presentation
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(288, 22);
             this.txtModel.TabIndex = 12;
+            this.txtModel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModel_KeyPress);
             // 
             // txtPrice
             // 
@@ -191,6 +194,7 @@ namespace Presentation
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(156, 22);
             this.txtPrice.TabIndex = 13;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // txtStock
             // 
@@ -198,9 +202,11 @@ namespace Presentation
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(156, 22);
             this.txtStock.TabIndex = 14;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // txtImage
             // 
+            this.txtImage.Enabled = false;
             this.txtImage.Location = new System.Drawing.Point(106, 370);
             this.txtImage.Name = "txtImage";
             this.txtImage.Size = new System.Drawing.Size(213, 22);
@@ -243,7 +249,6 @@ namespace Presentation
             this.MinimizeBox = false;
             this.Name = "frmProductAU";
             this.Text = "frmProductAU";
-            this.Load += new System.EventHandler(this.frmProductAU_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

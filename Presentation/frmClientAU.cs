@@ -43,7 +43,13 @@ namespace Presentation
             string email = txtEmail.Text;
             string phone = txtPhone.Text;
 
-            if (update == true)
+            if (String.IsNullOrWhiteSpace(name) || String.IsNullOrWhiteSpace(lastName) || String.IsNullOrWhiteSpace(email) || String.IsNullOrWhiteSpace(phone))
+            {
+                MessageBox.Show("Uno de los campos esta vacío!!", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+                if (update == true)
             {
                 clientToUpdate.Name = name;
                 clientToUpdate.LastName = lastName;
@@ -64,6 +70,52 @@ namespace Presentation
 
             clientRepository.Create(c);
             this.Dispose();
+        }
+
+        private void validateTextFileds(KeyPressEventArgs e, int validate)
+        {
+            if(validate == 0)
+            {
+                if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+                {
+                    MessageBox.Show("Solo letras", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+            else if(validate == 1)
+            {
+                if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+                {
+                    MessageBox.Show("Solo números", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+            else
+            {
+                if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar == 47) || (e.KeyChar >= 58 && e.KeyChar <= 63) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+                {
+                    MessageBox.Show("Solo números, letras, arroba ó punto", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validateTextFileds(e, 0);
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validateTextFileds(e, 1);
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validateTextFileds(e, 2);
         }
     }
 }

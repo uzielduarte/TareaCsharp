@@ -64,3 +64,14 @@ C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Infraestructure\obj\Debug\
 C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
 C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.exe
 C:\Users\Usuario\Documents\MyData\C#_Task\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.pdb
+D:\source\repos\TareaCsharp\Infraestructure\bin\Debug\Infraestructure.exe.config
+D:\source\repos\TareaCsharp\Infraestructure\bin\Debug\Infraestructure.exe
+D:\source\repos\TareaCsharp\Infraestructure\bin\Debug\Infraestructure.pdb
+D:\source\repos\TareaCsharp\Infraestructure\bin\Debug\Core.exe
+D:\source\repos\TareaCsharp\Infraestructure\bin\Debug\Core.pdb
+D:\source\repos\TareaCsharp\Infraestructure\bin\Debug\Core.exe.config
+D:\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.csprojAssemblyReference.cache
+D:\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.csproj.CoreCompileInputs.cache
+D:\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.csproj.CopyComplete
+D:\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.exe
+D:\source\repos\TareaCsharp\Infraestructure\obj\Debug\Infraestructure.pdb
